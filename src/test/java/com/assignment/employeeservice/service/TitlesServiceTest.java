@@ -1,6 +1,5 @@
 package com.assignment.employeeservice.service;
 
-import com.assignment.employeeservice.dto.EmployeesResponseDto;
 import com.assignment.employeeservice.dto.TitlesRequestDto;
 import com.assignment.employeeservice.dto.TitlesResponseDto;
 import com.assignment.employeeservice.dto.TitlesUpdateRequestDto;

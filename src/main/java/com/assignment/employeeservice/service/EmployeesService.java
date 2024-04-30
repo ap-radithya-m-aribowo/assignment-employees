@@ -1,7 +1,6 @@
 package com.assignment.employeeservice.service;
 
 import com.assignment.employeeservice.dto.*;
-import com.assignment.employeeservice.entity.Departments;
 import com.assignment.employeeservice.entity.Employees;
 import com.assignment.employeeservice.repository.EmployeesRepository;
 import org.springframework.beans.factory.annotation.Autowired;

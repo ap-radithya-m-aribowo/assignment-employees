@@ -1,7 +1,6 @@
 package com.assignment.employeeservice.controller;
 
 import com.assignment.employeeservice.dto.*;
-import com.assignment.employeeservice.entity.Departments;
 import com.assignment.employeeservice.entity.Employees;
 import com.assignment.employeeservice.service.EmployeesService;
 import io.swagger.annotations.ApiOperation;
@@ -41,7 +40,7 @@ public class EmployeesController {
                     @ApiResponse(code = 400, message = "Bad Request", response = ResponseEntity.class),
             }
     )
-    public ResponseEntity<List<Employees>> getAllDepartments(@Validated EmployeesRequestDto employeesRequestDto) {
+    public ResponseEntity<List<Employees>> getAllEmployees(@Validated EmployeesRequestDto employeesRequestDto) {
         return new ResponseEntity<>(employeesService.getAllEmployees(), HttpStatus.OK);
     }
 
@@ -53,7 +52,7 @@ public class EmployeesController {
                     @ApiResponse(code = 404, message = "Not Found", response = ResponseEntity.class),
             }
     )
-    public ResponseEntity<Employees> getAllDepartments(@PathVariable(value = "empNo")  Integer empNo) {
+    public ResponseEntity<Employees> getEmployeesByEmpNo(@PathVariable(value = "empNo")  Integer empNo) {
         return new ResponseEntity<>(employeesService.getEmployeeByEmpNo(empNo), HttpStatus.OK);
     }
 
@@ -78,7 +77,7 @@ public class EmployeesController {
                     @ApiResponse(code = 404, message = "Not Found"),
             }
     )
-    public ResponseEntity<DepartmentsResponseDto> deleteDepartments(@PathVariable(value = "empNo")  Integer empNo) throws IllegalArgumentException {
+    public ResponseEntity<EmployeesResponseDto> deleteEmployees(@PathVariable(value = "empNo")  Integer empNo) throws IllegalArgumentException {
         employeesService.deleteEmployees(empNo);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

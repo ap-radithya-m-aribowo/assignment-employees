@@ -1,7 +1,6 @@
 package com.assignment.employeeservice.controller;
 
 import com.assignment.employeeservice.dto.*;
-import com.assignment.employeeservice.entity.Departments;
 import com.assignment.employeeservice.entity.Titles;
 import com.assignment.employeeservice.service.TitlesService;
 import io.swagger.annotations.ApiOperation;
@@ -41,7 +40,7 @@ public class TitlesController {
                     @ApiResponse(code = 400, message = "Bad Request", response = ResponseEntity.class),
             }
     )
-    public ResponseEntity<List<Titles>> getAllTitles(@Validated DepartmentsRequestDto departmentsRequestDto) {
+    public ResponseEntity<List<Titles>> getAllTitles(@Validated TitlesRequestDto titlesRequestDto) {
         return new ResponseEntity<>(titlesService.getAllTitles(), HttpStatus.OK);
     }
 
@@ -70,7 +69,7 @@ public class TitlesController {
         return new ResponseEntity<>(titlesService.updateTitles(empNo, titlesUpdateRequestDto), HttpStatus.OK);
     }
 
-    @DeleteMapping("/departments/{empNo}")
+    @DeleteMapping("/titles/{empNo}")
     @ApiOperation(value = "Delete a Title Data")
     @ApiResponses(
             value = {
@@ -78,7 +77,7 @@ public class TitlesController {
                     @ApiResponse(code = 404, message = "Not Found"),
             }
     )
-    public ResponseEntity<DepartmentsResponseDto> deleteDepartments(@PathVariable(value = "empNo")  Integer empNo) throws IllegalArgumentException {
+    public ResponseEntity<TitlesResponseDto> deleteTitles(@PathVariable(value = "empNo")  Integer empNo) throws IllegalArgumentException {
         titlesService.deleteTitles(empNo);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

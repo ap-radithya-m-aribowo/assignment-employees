@@ -4,7 +4,6 @@ import com.assignment.employeeservice.dto.DepartmentsRequestDto;
 import com.assignment.employeeservice.dto.DepartmentsResponseDto;
 import com.assignment.employeeservice.dto.DepartmentsUpdateRequestDto;
 import com.assignment.employeeservice.entity.Departments;
-import com.assignment.employeeservice.entity.Employees;
 import com.assignment.employeeservice.repository.DepartmentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
