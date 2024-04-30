@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 public class Titles {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "emp_no")
     private Integer empNo;
 

@@ -25,7 +25,7 @@ public class EmployeesController {
     @ApiOperation(value = "Create An Employee")
     @ApiResponses(
             value = {
-                    @ApiResponse(code = 201, message = "Created", response = DepartmentsResponseDto.class),
+                    @ApiResponse(code = 201, message = "Created", response = EmployeesResponseDto.class),
                     @ApiResponse(code = 400, message = "Bad Request", response = ResponseEntity.class),
             }
     )
@@ -37,7 +37,7 @@ public class EmployeesController {
     @ApiOperation(value = "Get Employees Data")
     @ApiResponses(
             value = {
-                    @ApiResponse(code = 200, message = "OK", response = DepartmentsResponseDto.class),
+                    @ApiResponse(code = 200, message = "OK", response = EmployeesResponseDto.class),
                     @ApiResponse(code = 400, message = "Bad Request", response = ResponseEntity.class),
             }
     )
@@ -49,7 +49,7 @@ public class EmployeesController {
     @ApiOperation(value = "Get An Employee Data")
     @ApiResponses(
             value = {
-                    @ApiResponse(code = 200, message = "OK", response = DepartmentsResponseDto.class),
+                    @ApiResponse(code = 200, message = "OK", response = Employees.class),
                     @ApiResponse(code = 404, message = "Not Found", response = ResponseEntity.class),
             }
     )
@@ -61,7 +61,7 @@ public class EmployeesController {
     @ApiOperation(value = "Update an Employees Data")
     @ApiResponses(
             value = {
-                    @ApiResponse(code = 200, message = "OK", response = DepartmentsResponseDto.class),
+                    @ApiResponse(code = 200, message = "OK", response = EmployeesResponseDto.class),
                     @ApiResponse(code = 400, message = "Bad Request", response = ResponseEntity.class),
             }
     )
