@@ -77,7 +77,19 @@ public class EmployeesServiceTest {
     @Test
     public void getEmployeesWithZeroDataTest() {
         Mockito.when(employeesRepository.findAll()).thenReturn(Collections.emptyList());
-        Assertions.assertEquals(0,employeesRepository.findAll().size());
+        Assertions.assertEquals(0,employeesService.getAllEmployees().size());
+    }
+
+    @Test
+    public void getEmployeesByEmpNoTest() {
+        Mockito.when(employeesRepository.findById(Mockito.anyInt())).thenReturn(Optional.ofNullable(Mockito.mock(Employees.class)));
+        Assertions.assertNotNull(employeesService.getEmployeeByEmpNo(Mockito.anyInt()));
+    }
+
+    @Test
+    public void getEmployeesByEmpNoWithZeroDataTest() {
+        Mockito.when(employeesRepository.findById(Mockito.anyInt())).thenReturn(Optional.empty());
+        Assertions.assertThrows(IllegalArgumentException.class, () ->employeesService.getEmployeeByEmpNo(Mockito.anyInt()));
     }
 
     @Test

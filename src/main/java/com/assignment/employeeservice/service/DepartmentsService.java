@@ -4,6 +4,7 @@ import com.assignment.employeeservice.dto.DepartmentsRequestDto;
 import com.assignment.employeeservice.dto.DepartmentsResponseDto;
 import com.assignment.employeeservice.dto.DepartmentsUpdateRequestDto;
 import com.assignment.employeeservice.entity.Departments;
+import com.assignment.employeeservice.entity.Employees;
 import com.assignment.employeeservice.repository.DepartmentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -32,6 +33,16 @@ public class DepartmentsService {
 
     public List<Departments> getAllDepartments() {
         return departmentsRepository.findAll();
+    }
+
+    public Departments getDepartmentsByDeptNo(String deptNo) {
+        Optional<Departments> departments = departmentsRepository.findById(deptNo);
+
+        if (!departments.isPresent()) {
+            throw new IllegalArgumentException("Departments not found");
+        }
+
+        return departments.get();
     }
 
     public DepartmentsResponseDto updateDepartments(String deptNo, DepartmentsUpdateRequestDto departmentsRequestDto) throws IllegalArgumentException{

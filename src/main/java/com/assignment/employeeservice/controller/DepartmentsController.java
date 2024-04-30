@@ -47,6 +47,18 @@ public class DepartmentsController {
         return new ResponseEntity<>(departmentsService.getAllDepartments(), HttpStatus.OK);
     }
 
+    @GetMapping("/departments/{deptNo}")
+    @ApiOperation(value = "Get A Departments Data")
+    @ApiResponses(
+            value = {
+                    @ApiResponse(code = 200, message = "OK", response = DepartmentsResponseDto.class),
+                    @ApiResponse(code = 400, message = "Bad Request", response = ResponseEntity.class),
+            }
+    )
+    public ResponseEntity<Departments> getDepartmentsByDeptNo(@PathVariable(value = "deptNo")  String deptNo) {
+        return new ResponseEntity<>(departmentsService.getDepartmentsByDeptNo(deptNo), HttpStatus.OK);
+    }
+
     @PatchMapping("/departments/{deptNo}")
     @ApiOperation(value = "Update a Department Data")
     @ApiResponses(
