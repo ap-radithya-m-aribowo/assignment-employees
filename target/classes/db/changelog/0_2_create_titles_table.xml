@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="02" author="radithya">
+        <createTable tableName="titles"
+                     remarks="Table for titles data">
+            <column name="emp_no" type="int">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(50)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="from_date" type="date">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="to_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="titles" baseColumnNames="emp_no"
+                                 constraintName="titles_employees_fk"
+                                 referencedTableName="employees" referencedColumnNames="emp_no"/>
+    </changeSet>
+</databaseChangeLog>
