@@ -40,11 +40,21 @@ public class EmployeesService {
         return employeesRepository.findAll();
     }
 
+    public Employees getEmployeeByEmpNo(Integer empNo) {
+        Optional<Employees> employees = employeesRepository.findById(empNo);
+
+        if (!employees.isPresent()) {
+            throw new IllegalArgumentException("Employee not found");
+        }
+
+        return employees.get();
+    }
+
     public EmployeesResponseDto updateEmployees(Integer empNo, EmployeesUpdateRequestDto employeesUpdateRequestDto) throws IllegalArgumentException{
         Optional<Employees> employees = employeesRepository.findById(empNo);
 
         if (!employees.isPresent()) {
-            throw new IllegalArgumentException("Department not found");
+            throw new IllegalArgumentException("Employee not found");
         }
 
         Employees employeesEntity = employees.get();
@@ -69,7 +79,7 @@ public class EmployeesService {
         Optional<Employees> employees = employeesRepository.findById(empNo);
 
         if (!employees.isPresent()) {
-            throw new IllegalArgumentException("Employees not found");
+            throw new IllegalArgumentException("Employee not found");
         }
         employeesRepository.delete(employees.get());
     }

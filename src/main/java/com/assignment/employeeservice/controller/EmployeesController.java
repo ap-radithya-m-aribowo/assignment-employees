@@ -34,7 +34,7 @@ public class EmployeesController {
     }
 
     @GetMapping("/employees")
-    @ApiOperation(value = "Get Departments Data")
+    @ApiOperation(value = "Get Employees Data")
     @ApiResponses(
             value = {
                     @ApiResponse(code = 200, message = "OK", response = DepartmentsResponseDto.class),
@@ -42,7 +42,19 @@ public class EmployeesController {
             }
     )
     public ResponseEntity<List<Employees>> getAllDepartments(@Validated EmployeesRequestDto employeesRequestDto) {
-        return new ResponseEntity<>(employeesService.getAllDepartments(), HttpStatus.OK);
+        return new ResponseEntity<>(employeesService.getAllEmployees(), HttpStatus.OK);
+    }
+
+    @GetMapping("/employees/{empNo}")
+    @ApiOperation(value = "Get An Employee Data")
+    @ApiResponses(
+            value = {
+                    @ApiResponse(code = 200, message = "OK", response = DepartmentsResponseDto.class),
+                    @ApiResponse(code = 404, message = "Not Found", response = ResponseEntity.class),
+            }
+    )
+    public ResponseEntity<Employees> getAllDepartments(@PathVariable(value = "empNo")  Integer empNo) {
+        return new ResponseEntity<>(employeesService.getEmployeeByEmpNo(empNo), HttpStatus.OK);
     }
 
     @PatchMapping("/employees/{empNo}")
