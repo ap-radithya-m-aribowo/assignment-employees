@@ -36,7 +36,7 @@ public class EmployeesService {
         return employeesResponseDto;
     }
 
-    public List<Employees> getAllDepartments() {
+    public List<Employees> getAllEmployees() {
         return employeesRepository.findAll();
     }
 
