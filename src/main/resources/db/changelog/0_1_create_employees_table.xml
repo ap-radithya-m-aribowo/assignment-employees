@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="01" author="radithya">
+        <createTable tableName="employees"
+                     remarks="Table for employees data">
+            <column name="emp_no" type="int">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="birth_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender" type="varchar(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hire_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

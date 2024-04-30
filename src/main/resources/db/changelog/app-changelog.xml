@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="/db/changelog/0_1_create_employees_table.xml"/>
+    <include file="db/changelog/0_2_create_titles_table.xml"/>
+    <include file="/db/changelog/0_3_create_salaries_table.xml"/>
+    <include file="db/changelog/0_4_create_departments_table.xml"/>
+    <include file="db/changelog/0_5_create_dept_emp_table.xml"/>
+    <include file="db/changelog/0_6_create_dept_manager_table.xml"/>
+<!--    <include file="db/changelog/0_7_add_foreign_keys.xml"/>-->
+
+</databaseChangeLog>
