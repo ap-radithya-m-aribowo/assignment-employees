@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "549d33f8-c762-4507-8cd9-4221089512b7",
+		"name": "employees-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18611736"
+	},
+	"item": [
+		{
+			"name": "POST Department",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"deptNo\":\"CSc12\",\n    \"departmentName\":\"Cyber Security Team C\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/employee-service/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Department",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/employee-service/departments/CSc12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"departments",
+						"CSc12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Department",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departmentName\":\"Cyber Security Team B\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/employee-service/departments/CSB12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"departments",
+						"CSB12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/employee-service/departments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employees",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"empNo\":44,\n    \"birthDate\": \"2003-03-29T01:23:00\",\n    \"firstName\":\"James\",\n    \"lastName\":\"Aribowo\",\n    \"gender\":\"M\",\n    \"hireDate\": \"2024-01-01T00:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/employee-service/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/employee-service/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Employees",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"birthDate\": \"2003-03-29T01:23:00\",\n    \"firstName\":\"Radithya Mirza\",\n    \"lastName\":\"Aribowo\",\n    \"gender\":\"M\",\n    \"hireDate\": \"2024-01-01T00:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/employee-service/employees/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"employees",
+						"123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employees by empNo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/employee-service/employees/44",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employee-service",
+						"employees",
+						"44"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Titles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"empNo\":44,\n    \"title\": \"Junior Software Engineer\",\n    \"fromDate\": \"2023-01-01T00:00:00\",\n    \"toDate\": \"2024-01-01T00:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9001/employee-service/titles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"employee-service",
+						"titles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
